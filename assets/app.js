@@ -53,10 +53,6 @@ $(document).ready(function () {
   }
 
 
-
-
-
-
   var inputText = "";
   $(".submitBtn").on("click", function (e) {
     e.preventDefault();
