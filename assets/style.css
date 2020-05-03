@@ -65,7 +65,7 @@ textarea {
   color: white;
 }
 
-#submitBtn {
+.submitBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -73,7 +73,7 @@ textarea {
   color: white;
 }
 
-#submitBtn i:hover {
+.submitBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
