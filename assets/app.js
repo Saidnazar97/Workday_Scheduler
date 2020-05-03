@@ -28,6 +28,25 @@ document.getElementById("demo").innerHTML = "Today is " + day;
 $(document).ready(function () {
   var time = moment().format("HH");
   console.log(time);
+  var AM_PM_Variable = "";
+  var date_var = new Date();
+  var curr_hour = date_var.getHours();
+
+
+  if (curr_hour < 12) {
+    AM_PM_Variable = "AM";
+  } else {
+    AM_PM_Variable = "PM";
+  }
+  if (curr_hour == 0) {
+    curr_hour = 12;
+  }
+  if (curr_hour > 12) {
+    curr_hour = curr_hour - 12;
+  }
+  var curr_min = date_var.getMinutes();
+
+  $(".container").append(curr_hour + ":" + curr_min + "" + AM_PM_Variable);
   for (var i = 8; i < 20; i++) {
     $(".container").append(`<form class="row">
 
