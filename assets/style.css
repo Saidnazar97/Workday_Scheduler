@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -34,8 +40,8 @@ textarea {
 .row {
   white-space: pre-wrap;
   height: 70px;
-  border-top: 1px solid black;
-  ;
+  border-top: 3px solid black;
+
 }
 
 .hour {
@@ -59,7 +65,7 @@ textarea {
   color: white;
 }
 
-#saveBtn {
+#submitBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -67,7 +73,7 @@ textarea {
   color: white;
 }
 
-#saveBtn i:hover {
+#submitBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
@@ -79,4 +85,11 @@ textarea {
   /* background-color: #06AED5; */
   color: grey;
   width: 70px;
+  height: 40px;
+}
+
+#demo {
+  margin-bottom: 5px;
+  letter-spacing: 5px;
+  text-align: center;
 }
