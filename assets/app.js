@@ -27,11 +27,17 @@ document.getElementById("demo").innerHTML = "Today is " + day;
 
 $(document).ready(function () {
   var time = moment().format("HH");
-  console.log(time);
   var AM_PM_Variable = "";
   var date_var = new Date();
   var curr_hour = date_var.getHours();
+ var inputText = "";
+  $("document").on("click", ".submitBtn", function (e) {
+    e.preventDefault();
+    inputText = $(".textInput").val("");
+    localStorage.setItem('.textInput', JSON.stringify(inputText));
+console.log(localStorage);
 
+  });
 
   if (curr_hour < 12) {
     AM_PM_Variable = "AM";
@@ -71,13 +77,4 @@ $(document).ready(function () {
 
   }
 
-
-  var inputText = "";
-  $(".submitBtn").on("click", function (e) {
-    e.preventDefault();
-    $(".textInput").val("");
-    localStorage.setItem('.textInput', JSON.stringify(inputText));
-
-
-  });
 });
