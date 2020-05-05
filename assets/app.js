@@ -35,10 +35,9 @@ $(document).ready(function () {
     e.preventDefault();
     inputText = $(".textInput").val("");
 
-    localStorage.setItem('.textInput', JSON.stringify(inputText));
+    localStorage.setItem("textInput", inputText);
 
     console.log(localStorage);
-
   });
 
   if (curr_hour < 12) {
@@ -59,7 +58,7 @@ $(document).ready(function () {
     $(".container").append(`<form class="row">
   <div class="input-group flex-nowrap">
     <div class="input-group-text" id="space">
-      <tr>${i}</tr>
+      <tr>${i + AM_PM_Variable} </tr>
     </div>
     <input type="text" id="${i}"  class="form-control textInput" placeholder="Add an event to here">
     <div class="input-group-prepend">
@@ -75,9 +74,5 @@ $(document).ready(function () {
     } else {
       $(`#${i}`).attr("style", "background-color:  red; color: white;");
     }
-
   }
-
-
-
 });
