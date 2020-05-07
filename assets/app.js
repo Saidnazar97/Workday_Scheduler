@@ -26,19 +26,34 @@ switch (new Date().getDay()) {
 document.getElementById("demo").innerHTML = "Today is " + day;
 
 $(document).ready(function () {
+  console.log("Hello world");
+  var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
+  $("#currentDate").text(currentDate);
   var time = moment().format("HH");
+
+  $(".submitBtn").on("click", function (e) {
+    e.preventDefault();
+    userText = $(".textInput").val();
+
+    localStorage.setItem(
+      "data",
+      JSON.stringify({
+        task: userText,
+      })
+    );
+    console.log(JSON.parse(localStorage.getItem("data")).task);
+  });
+
+  function render6Data() {
+    var item = JSON.parse(localStorage.getItem("data6"));
+    if (item != null) {
+      $("#textInput6").val(item.task);
+    }
+  }
+
   var AM_PM_Variable = "";
   var date_var = new Date();
   var curr_hour = date_var.getHours();
-  var inputText = "";
-  $(document).on("click", ".submitBtn", function (e) {
-    e.preventDefault();
-    inputText = $(".textInput").val("");
-
-    localStorage.setItem("textInput", inputText);
-
-    console.log(localStorage);
-  });
 
   if (curr_hour < 12) {
     AM_PM_Variable = "AM";
